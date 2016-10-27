@@ -26,3 +26,5 @@
 ### totalPage：初始时总页码数;showPageSlector：是否显示跳转栏，默认为true;prePageText:'上一页'按钮字符，默认是"<上一页";
 ### nextPageText:'下一页'按钮字符，默认是"下一页>";pageClick:用户自定义点选 上一页、下一页或者数字页时的事件函数，并传入event和 页码两个参数，用户可以自定义在此做拉取数据显示的操作；
 ### submit：用户自定义跳转页面的事件函数，并传入event和 页码两个参数，用户可以自定义在此做拉取数据显示的操作，不会影响样式；
+### 样式：
+![](https://github.com/2013xming/pagination/blob/master/%E6%95%88%E6%9E%9C.jpg)  
