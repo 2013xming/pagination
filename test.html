@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./css/pagination.css">
+   
+<title>分页插件</title>
+</head>
+<body >
+	<div id="pagination"></div>
+</body>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/pagination.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	var options = {
+		fixedDiff : 5, 
+		currentPage : 1,
+		totalPage : 4,
+		showPageSlector:true,
+		prePageText:'<<',
+		nextPageText:'>>',
+		pageClick : function(e,num){
+			console.log(num);
+		},
+		submit: function(e,num){
+			console.log(num);
+		}
+	}
+	var page = new pagingPlugin(options,"pagination");
+});
+</script>
+
+</html>
