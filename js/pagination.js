@@ -22,8 +22,8 @@
 			currentPage : 0,
 			totalPage : 10,
 			showPageSlector : true,
-			prePageText:"&lt;上一页",
-			nextPageText:"下一页&gt;",
+			prePageText:"<上一页",
+			nextPageText:"下一页>",
 			pageClick : function(e){},
 			submit: function(e){}
 		}
