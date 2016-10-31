@@ -40,13 +40,20 @@
 		var preSpotShow = false,nextSpotShow = false;
 		if(currentPage == 1){
 			$("ol.pagination #prePage").addClass("disable");
-		}else if(currentPage == totalPage){
-			$("ol.pagination #nextPage").addClass("disable");
 		}else{
 			$("ol.pagination #prePage").removeClass("disable");
 			$("ol.pagination #prePage").removeClass("cbDone");
+		} 
+		if(currentPage == totalPage){
+			$("ol.pagination #nextPage").addClass("disable");
+		}else{
 			$("ol.pagination #nextPage").removeClass("disable");
 			$("ol.pagination #nextPage").removeClass("cbDone");
+		}
+		if(this.options.showPageSlector){
+			$("ol.pagination").find("span.pageSlector").find("#total-page").text(this.options.totalPage);
+			$("ol.pagination").find("span.pageSlector").find("#inputPage").attr("max",this.options.totalPage);
+			$("ol.pagination").find("span.pageSlector").find("#inputPage").attr("placeholder",this.options.totalPage);
 		}
 		if(fixedDiff>=totalPage){
 			start = 1;
@@ -187,6 +194,16 @@
 			$("#"+elementId).on("click","#pageSubmit",this.options.submit);
 		}
 
+	};
+	pagingPlugin.prototype.currentPage = function(){
+		return this.options.currentPage;
+	};
+	pagingPlugin.prototype.setTotalPage = function(totalpage){
+		this.options.totalPage = totalpage || this.options.totalPage;
+		this.setPagination(this.options.currentPage);
+	};
+	pagingPlugin.prototype.getTotalPage = function(){
+		return this.options.totalPage;
 	};
 	win.pagingPlugin = pagingPlugin;
 })(window);
